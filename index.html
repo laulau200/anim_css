@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>feu</title>
+<style>
+    .container {
+  /* display: flex;  */
+  position: relative;
+}
+
+.vert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%
+  height: 100%;
+  z-index: 1;
+/*  visibility: hidden; */
+ #main {margin-left: 216px;} 
+}
+
+
+
+.bleu {
+    position: absolute;
+  margin-left: -50px; /* Décalage négatif pour superposer */
+  z-index: 2;
+}
+
+.rouge {
+    position: absolute;
+  margin-left: -50px; /* Décalage négatif pour superposer */
+  z-index: 3;
+}
+
+/* test anim*/
+/* body {
+  margin: 0;
+  padding: 0;
+}
+
+.element {
+  animation: slideUp 1s ease-in-out infinite alternate;
+  background: #CCC;
+  border: 5px solid gray;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+} */
+
+
+
+/*fin test*/
+.rouge {
+  animation: hide 1s ease-in-out infinite alternate;
+  visibility: hide;
+  /* border: 5px solid gray;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  width: 100%; */
+}
+
+/* @keyframes hide {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+} */
+
+ @keyframes delayedShow {
+  to {
+    visibility: visible;
+  }
+}
+
+.delayedShow{
+  visibility: hidden;
+  animation: 0s linear 2.3s forwards delayedShow ;
+}
+</style>
+</head>
+<body>
+    <h1>test div</h1>
+    <div class="container">
+        <div class="vert">vert<img src="./img/feu-vert.png"></div>
+        <div class="bleu">bleu<img src="./img/feu-bleu.png"></div>
+        <div class="rouge">rouge<img src="./img/feu-rouge.png"></div>
+        <div class="delayedShow">Test anim</div>
+    </div>
+
+    <div class="delayedShow">
+  Hey, I'm here!
+</div>
+    
+</body>
+</html>
